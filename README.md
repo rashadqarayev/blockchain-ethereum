@@ -1,200 +1,374 @@
 ![alt text](image.png)
 
-# Front-end - Guideline
+# Rashad's Detailed Blockchain Developer Roadmap
 
-## 📖 Summary
+## Goal
+Transition from a junior frontend developer (React/TypeScript/Next.js) to a proficient blockchain developer specializing in Solidity and Web3 integration by May 2026. This strict, detailed roadmap includes specific courses, books, videos, and tasks with deadlines, with direct links embedded in resources and clear section separators to combat procrastination.
 
-1. [What is Ethereum?](#1-what-is-ethereum)
-2. [Smart Contracts with Solidity](#2-smart-contracts-with-solidity)
-3. [Advanced Smart Contracts](#3-advanced-smart-contracts)
-4. [Building Interactive Front-Ends](#4-building-interactive-front-ends)
-5. [Real Projects with Ethereum](#5-real-projects-with-ethereum)
-6. [Ethereum Project Infrastructure](#6-ethereum-project-infrastructure)
-7. [Advanced Multi-Page Front-Ends](#7-advanced-multi-page-front-ends)
-8. [Appendix: Basic React](#8-appendix-basic-react)
-9. [Extras](#9-extras)
+## Prerequisites
+- **Skills**: Basic React, TypeScript, Next.js knowledge.
+- **Tools**: VS Code, Git, Node.js, [MetaMask](https://metamask.io/) installed.
+- **Time Commitment**: 10-15 hours/week (2-3 hours/day, 5 days/week).
+- **Accountability**: Use a habit tracker ([Notion](https://www.notion.so/) or [Todoist](https://todoist.com/)). Share weekly progress on X (#Web3Journey).
 
 ---
 
-## 1. What is Ethereum?
+## Phase 1: Blockchain & Solidity Foundations (May 2025 - July 2025, 3 Months)
+### Objective
+Master blockchain basics, Solidity fundamentals, and deploy a simple smart contract.
 
-- 1.0 [Introduction](#10-introduction)
-- 1.1 [A Short History Lesson](#11-a-short-history-lesson)
-- 1.2 [What is Ethereum?](#12-what-is-ethereum)
-- 1.3 [Interfacing with Ethereum Networks](#13-interfacing-with-ethereum-networks)
-- 1.4 [Metamask Setup and Configuration](#14-metamask-setup-and-configuration)
-- 1.5 [Ethereum Accounts](#15-ethereum-accounts)
-- 1.6 [Getting Test Ether to Use in the Course](#16-getting-test-ether-to-use-in-the-course)
-- 1.7 [What's a Transaction?](#17-whats-a-transaction)
-- 1.8 [Why'd We Wait?](#18-whyd-we-wait)
-- 1.9 [Basic Blockchains](#19-basic-blockchains)
-- 1.10 [Block Time](#110-block-time)
-- 1.11 [Smart Contracts](#111-smart-contracts)
-- 1.12 [The Solidity Programming Language](#112-the-solidity-programming-language)
-- 1.13 [Updated Remix Instructions for new UI - Do Not Skip](#113-updated-remix-instructions-for-new-ui-do-not-skip)
-- 1.14 [Our First Contract](#114-our-first-contract)
-- 1.15 [Contract Structure](#115-contract-structure)
-- 1.16 [Function Declarations](#116-function-declarations)
-- 1.17 [Deploying Contract in New Remix UI](#117-deploying-contract-in-new-remix-ui)
-- 1.18 [Testing with Remix](#118-testing-with-remix)
-- 1.19 [Redeploying Contracts](#119-redeploying-contracts)
-- 1.20 [Behind the Scenes of Deployment](#120-behind-the-scenes-of-deployment)
-- 1.21 [More on Running Functions Than You Want to Know](#121-more-on-running-functions-than-you-want-to-know)
-- 1.22 [Wei vs Ether](#122-wei-vs-ether)
-- 1.23 [Gas and Transactions](#123-gas-and-transactions)
-- 1.24 [Mnemonic Phrases](#124-mnemonic-phrases)
-- 1.25 [We Need More Test Ether!](#125-we-need-more-test-ether)
-- 1.26 [Obtaining More Test Ether from Recommended Faucet](#126-obtaining-more-test-ether-from-recommended-faucet)
+### Weekly Schedule
+- **Mon-Fri**: 2 hours/day (1 hour study, 1 hour practice).
+- **Sat**: Review + project work (2 hours).
+- **Sun**: Rest or catch-up.
 
-## 2. Smart Contracts with Solidity
+---
 
-- 2.0 [Installing Node.js, npm and Git](#20-installing-nodejs-npm-and-git)
-- 2.1 [Contract Deployment](#21-contract-deployment)
-- 2.2 [Completed Boilerplate](#22-completed-boilerplate)
-- 2.3 [Project Requirements](#23-project-requirements)
-- 2.4 [Project File Walkthrough](#24-project-file-walkthrough)
-- 2.5 [Compiling Solidity](#25-compiling-solidity)
-- 2.6 [Invalid asm.js or Constructor Deprecation Warning](#26-invalid-asmjs-or-constructor-deprecation-warning)
-- 2.7 [The Compile Script](#27-the-compile-script)
-- 2.8 [Testing Architecture](#28-testing-architecture)
-- 2.9 [Breaking Change - Web3 v4 and Ganache](#29-breaking-change-web3-v4-and-ganache)
-- 2.10 [Installing Modules](#210-installing-modules)
-- 2.11 [Web3 Versioning](#211-web3-versioning)
-- 2.12 [Web3 Providers](#212-web3-providers)
-- 2.13 [Testing with Mocha](#213-testing-with-mocha)
-- 2.14 [Mocha Structure](#214-mocha-structure)
-- 2.15 [Fetching Accounts from Ganache](#215-fetching-accounts-from-ganache)
-- 2.16 [Refactor to Async/Await](#216-refactor-to-async-await)
-- 2.17 [Deployment with Web3](#217-deployment-with-web3)
-- 2.18 [Deployed Inbox Overview](#218-deployed-inbox-overview)
-- 2.19 [Asserting Deployment](#219-asserting-deployment)
-- 2.20 [Verifying the Initial Message](#220-verifying-the-initial-message)
-- 2.21 [Testing Message Updates](#221-testing-message-updates)
-- 2.22 [Deployment with Infura](#222-deployment-with-infura)
-- 2.23 [Infura Signup](#223-infura-signup)
-- 2.24 [Super Important Note about Seed / Recovery Phrase Security](#224-super-important-note-about-seed-recovery-phrase-security)
-- 2.25 [Wallet Provider Setup](#225-wallet-provider-setup)
-- 2.26 [Deployment to Testnet](#226-deployment-to-testnet)
-- 2.27 [Observing Deployment on Etherscan](#227-observing-deployment-on-etherscan)
-- 2.28 [Remix Permissions and Metamask](#228-remix-permissions-and-metamask)
-- 2.29 [Deployed Contracts in Remix](#229-deployed-contracts-in-remix)
-- 2.30 [Project Review](#230-project-review)
-- 2.31 [Updating Your Inbox Project to Solc v0.8.19](#231-updating-your-inbox-project-to-solc-v0819)
+### Month 1: Blockchain Basics (May 2025)
 
+#### Week 1: Blockchain Fundamentals (May 12-18, 2025)
+- **Tasks**:
+  - Learn blockchain concepts: decentralization, consensus, hashing.
+  - Understand Ethereum: accounts, transactions, gas, EVM.
+- **Resources**:
+  - **Course**: [Coursera: Blockchain Basics](https://www.coursera.org/learn/blockchain-basics) (audit free or $49 for certificate). Complete Week 1 modules (2 hours).
+  - **Book**: [*Mastering Ethereum*](https://github.com/ethereumbook/ethereumbook), Chapters 1-2, ~50 pages (free PDF).
+  - **Video**: [Blockchain 101 by IBM](https://www.youtube.com/watch?v=coQ5dg8wM2o) (30 mins).
+  - **PDF**: [Blockchain Overview by Macquarie University](https://data-science-group.github.io/BigDataSociety/Hackathon/2018-09/Blockchain.pdf).
+- **Practice**:
+  - Write a 200-word summary of blockchain vs. traditional databases.
+  - Deadline: May 18, 2025.
+- **Accountability**: Post summary on X with #Web3Journey.
 
-## 3. Advanced Smart Contracts
+---
 
-- 3.0 [The Lottery Contract](#30-the-lottery-contract)
-- 3.1 [Lottery Design](#31-lottery-design)
-- 3.2 [Reminder on Updated Remix UI](#32-reminder-on-updated-remix-ui)
-- 3.3 [Basic Solidity Types](#33-basic-solidity-types)
-- 3.4 [Starting the Lottery Contract](#34-starting-the-lottery-contract)
-- 3.5 [The Message Global Variable](#35-the-message-global-variable)
-- 3.6 [Overview of Arrays](#36-overview-of-arrays)
-- 3.7 [Overview of Mappings and Structs](#37-overview-of-mappings-and-structs)
-- 3.8 [Big Solidity Gotcha](#38-big-solidity-gotcha)
-- 3.9 [Entering the Lottery](#39-entering-the-lottery)
-- 3.10 [Validation with Require Statements](#310-validation-with-require-statements)
-- 3.11 [The Remix Debugger](#311-the-remix-debugger)
-- 3.12 [Pseudo Random Number Generator](#312-pseudo-random-number-generator)
-- 3.13 [Selecting a Winner](#313-selecting-a-winner)
-- 3.14 [Sending Ether from Contracts](#314-sending-ether-from-contracts)
-- 3.15 [Resetting Contract State](#315-resetting-contract-state)
-- 3.16 [Requiring Managers](#316-requiring-managers)
-- 3.17 [Function Modifiers](#317-function-modifiers)
-- 3.18 [Returning Players Array](#318-returning-players-array)
-- 3.19 [Contract Review](#319-contract-review)
-- 3.20 [Completed Boilerplate - Do Not Skip](#320-completed-boilerplate-do-not-skip)
-- 3.21 [New Test Setup](#321-new-test-setup)
-- 3.22 [Test Project Updates](#322-test-project-updates)
-- 3.23 [Web3 v4 and Ganache Breaking Change Reminder](#323-web3-v4-and-ganache-breaking-change-reminder)
-- 3.24 [Test Helper Review](#324-test-helper-review)
-- 3.25 [Entering the Lottery](#325-entering-the-lottery)
-- 3.26 [Asserting Multiple Players](#326-asserting-multiple-players)
-- 3.27 [Try-Catch Assertions](#327-try-catch-assertions)
-- 3.28 [Testing Function Modifiers](#328-testing-function-modifiers)
-- 3.29 [End to End Test](#329-end-to-end-test)
+#### Week 2: Ethereum Deep Dive (May 19-25, 2025)
+- **Tasks**:
+  - Study Ethereum transactions, gas fees, and testnets.
+  - Install MetaMask and fund it with Sepolia ETH.
+- **Resources**:
+  - **Course**: [Coursera: Blockchain Basics](https://www.coursera.org/learn/blockchain-basics) (Week 2 modules).
+  - **Doc**: [Ethereum Docs: Introduction to Ethereum](https://ethereum.org/en/developers/docs/intro-to-ethereum/).
+  - **Video**: [How to Set Up and Use the Sepolia Testnet](https://fxis.ai/edu/how-to-set-up-and-use-the-sepolia-testnet/) (20 mins).
+  - **Faucet**: [Chainlink Sepolia Faucet](https://faucets.chain.link/) or [Sepolia FaucETH](https://faucet.sepolia.dev/).
+- **Practice**:
+  - Set up MetaMask and get Sepolia ETH.
+  - Send a test transaction on Sepolia (see guide below).
+  - Deadline: May 25, 2025.
 
+---
 
-## 4. Building Interactive Front-Ends
+#### Week 3-4: Intro to Solidity (May 26 - June 8, 2025)
+- **Tasks**:
+  - Learn Solidity basics: variables, functions, mappings, events.
+  - Write a simple contract in Remix IDE.
+- **Resources**:
+  - **Course**: [Udemy: Ethereum and Solidity: The Complete Developer's Guide](https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/) by Stephen Grider. Complete Sections 1-3 (Solidity basics, ~6 hours).
+  - **Interactive**: [CryptoZombies](https://cryptozombies.io/) (Lessons 1-3, ~3 hours).
+  - **Doc**: [Solidity Docs: Getting Started](https://docs.soliditylang.org/en/latest/introduction-to-smart-contracts.html).
+  - **Video**: [freeCodeCamp: Solidity, Blockchain, and Smart Contract Course](https://www.youtube.com/watch?v=um2K6rH4u_g) (watch Solidity basics, 0:00-1:00, ~1 hour).
+- **Practice**:
+  - Write a Solidity contract for a counter (increment/decrement).
+  - Deploy on Sepolia using [Remix IDE](https://remix.ethereum.org/).
+  - Deadline: June 8, 2025.
+- **Accountability**: Share contract code on [GitHub](https://github.com/) and link on X.
 
-- 4.0 [Ethereum App Architecture](#40-ethereum-app-architecture)
-- 4.1 [Boilerplate and React App Updates - Do Not Skip](#41-boilerplate-and-react-app-updates-do-not-skip)
-- 4.2 [Application Overview](#42-application-overview)
-- 4.3 [Getting Started with Create-React-App](#43-getting-started-with-create-react-app)
-- 4.4 [Multiple Web3 Instances](#44-multiple-web3-instances)
-- 4.5 [Required Update for Web3 and Metamask Permissions](#45-required-update-for-web3-and-metamask-permissions)
-- 4.6 [Web3 Setup](#46-web3-setup)
-- 4.7 [Deploying the Lottery Contract](#47-deploying-the-lottery-contract)
-- 4.8 [Local Contract Instances](#48-local-contract-instances)
-- 4.9 [Rendering Contract Data](#49-rendering-contract-data)
-- 4.10 [Instance Properties](#410-instance-properties)
-- 4.11 [Accessing More Properties](#411-accessing-more-properties)
-- 4.12 [The 'Enter' Form](#412-the-enter-form)
-- 4.13 [Form Setup](#413-form-setup)
-- 4.14 [Entering the Lottery](#414-entering-the-lottery)
-- 4.15 [Picking a Winner](#415-picking-a-winner)
-- 4.16 [Project Review](#416-project-review)
-- 4.17 [Updating Your Lottery Project to Solc v0.8.19](#417-updating-your-lottery-project-to-solc-v0819)
-- 4.18 [Refactoring React App From Class to Functional Component](#418-refactoring-react-app-from-class-to-functional-component)
+---
 
+### Month 2: Solidity Core (June 2025)
 
-## 5. Real Projects with Ethereum
+#### Week 5-6: Smart Contract Development (June 9-22, 2025)
+- **Tasks**:
+  - Learn structs, arrays, and error handling.
+  - Study smart contract security (reentrancy, overflow).
+- **Resources**:
+  - **Course**: [Udemy: Ethereum and Solidity: The Complete Developer's Guide](https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/) (Sections 4-6, ~8 hours).
+  - **Book**: [*Mastering Blockchain Programming with Solidity*](https://www.packtpub.com/product/mastering-blockchain-programming-with-solidity/9781839218262), Chapters 1-3, ~60 pages.
+  - **Doc**: [OpenZeppelin Security](https://docs.openzeppelin.com/contracts/4.x/security).
+  - **Video**: [freeCodeCamp: Solidity, Blockchain, and Smart Contract Course](https://www.youtube.com/watch?v=um2K6rH4u_g) (watch security section, 1:00-2:00, ~1 hour).
+- **Practice**:
+  - Build a voting contract (users vote, tally results).
+  - Test locally with [Remix IDE](https://remix.ethereum.org/).
+  - Deadline: June 22, 2025.
 
-- 5.0 [Solving Real Problems with Contracts](#50-solving-real-problems-with-contracts)
-- 5.1 [Fixing Kickstarter's Issues](#51-fixing-kickstarters-issues)
-- 5.2 [Campaign Contract Design](#52-campaign-contract-design)
-- 5.3 [Reminder on Updated Remix UI](#53-reminder-on-updated-remix-ui)
-- 5.4 [Campaign Constructor](#54-campaign-constructor)
-- 5.5 [Contributing to the Campaign](#55-contributing-to-the-campaign)
-- 5.6 [A Quick Test](#56-a-quick-test)
-- 5.7 [The Request Struct](#57-the-request-struct)
-- 5.8 [More on Function Modifiers](#58-more-on-function-modifiers)
-- 5.9 [Creating Struct Instances](#59-creating-struct-instances)
-- 5.10 [Instance Creation Syntax](#510-instance-creation-syntax)
-- 5.11 [Storage and Memory](#511-storage-and-memory)
-- 5.12 [More on Storage vs Memory](#512-more-on-storage-vs-memory)
-- 5.13 [Voting System Requirements](#513-voting-system-requirements)
-- 5.14 [The Wrong Voting System](#514-the-wrong-voting-system)
-- 5.15 [Issues with Arrays](#515-issues-with-arrays)
-- 5.16 [Mappings vs Arrays](#516-mappings-vs-arrays)
-- 5.17 [Basics of Mappings](#517-basics-of-mappings)
-- 5.18 [Refactoring to Mappings](#518-refactoring-to-mappings)
-- 5.19 [Refactoring Request Structs](#519-refactoring-request-structs)
-- 5.20 [More on Struct Initialization](#520-more-on-struct-initialization)
-- 5.21 [Approving a Request](#521-approving-a-request)
-- 5.22 [Testing Request Approvals](#522-testing-request-approvals)
-- 5.23 [Finalizing a Request](#523-finalizing-a-request)
-- 5.24 [Last Remix Test](#524-last-remix-test)
-- 5.25 [Thinking about Deployment](#525-thinking-about-deployment)
-- 5.26 [Solution to Deployment](#526-solution-to-deployment)
-- 5.27 [Adding a Campaign Factory](#527-adding-a-campaign-factory)
-- 5.28 [Testing the Factory](#528-testing-the-factory)
+---
 
-## 6. Ethereum Project Infrastructure
+#### Week 7-8: Dev Environment Setup (June 23 - July 6, 2025)
+- **Tasks**:
+  - Set up Hardhat for local blockchain dev.
+  - Write and test a contract using Hardhat.
+- **Resources**:
+  - **Course**: [Udemy: Ethereum Blockchain Developer Bootcamp With Solidity](https://www.udemy.com/course/blockchain-developer/) (Sections 1-2, ~4 hours).
+  - **Doc**: [Hardhat Docs: Tutorial](https://hardhat.org/tutorial/).
+  - **Video**: [Hardhat Setup Tutorial](https://www.youtube.com/watch?v=9Qpi3s69A0I) (30 mins).
+- **Practice**:
+  - Deploy voting contract on Sepolia using Hardhat.
+  - Write 3 unit tests.
+  - Deadline: July 6, 2025.
+- **Accountability**: Push code to [GitHub](https://github.com/) and share on X.
 
-- 6.0 [Completed Boilerplate - Do Not Skip](#60-completed-boilerplate-do-not-skip)
-- 6.1 [Updated Ganache Installation Reminder](#61-updated-ganache-installation-reminder)
-- 6.2 [Project Setup](#62-project-setup)
-- 6.3 [Directory Structure](#63-directory-structure)
-- 6.4 [A Better Compile Script](#64-a-better-compile-script)
-- 6.5 [Single Run Compilation](#65-single-run-compilation)
-- 6.6 [More on Compile](#66-more-on-compile)
-- 6.7 [Web3 v4 and Ganache Breaking Change Reminder](#67-web3-v4-and-ganache-breaking-change-reminder)
-- 6.8 [Test File Setup](#68-test-file-setup)
-- 6.9 [Creating Campaign Instances](#69-creating-campaign-instances)
-- 6.10 [Testing Warmup](#610-testing-warmup)
-- 6.11 [Accessing Mappings](#611-accessing-mappings)
-- 6.12 [Requiring Minimum Contributions](#612-requiring-minimum-contributions)
-- 6.13 [Array Getters](#613-array-getters)
-- 6.14 [One End to End Test](#614-one-end-to-end-test)
-- 6.15 [Deployment](#615-deployment)
-- 6.16 [Refactoring Deployment](#616-refactoring-deployment)
+---
 
+### Month 3: Mini-Project (July 2025)
 
+#### Week 9-12: To-Do List DApp (July 7-31, 2025)
+- **Tasks**:
+  - Write a Solidity contract for a decentralized to-do list.
+  - Deploy on Sepolia and test with MetaMask.
+- **Resources**:
+  - **Course**: [Udemy: Ethereum and Solidity: The Complete Developer's Guide](https://www.udemy.com/course/ethereum-and-solidity-the-complete-developers-guide/) (Sections 7-8, ~6 hours).
+  - **Tutorial**: [Alchemy: Build a To-Do List DApp](https://www.alchemy.com/overviews/how-to-build-a-to-do-list-dapp-on-ethereum).
+  - **Video**: [freeCodeCamp: Solidity, Blockchain, and Smart Contract Course](https://www.youtube.com/watch?v=um2K6rH4u_g) (watch DApp section, 2:00-3:00, ~1 hour).
+- **Practice**:
+  - Contract features: Add task, mark complete, delete task.
+  - Test all functions on Sepolia.
+  - Create a basic React frontend to display tasks.
+  - Deadline: July 31, 2025.
+- **Accountability**: Share DApp demo (screenshots or video) on X.
 
-## 7. Advanced Multi-Page Front-ends
+---
 
-## 8. Appendix: Basic React
+### Milestones
+- Complete Coursera and Udemy courses.
+- Deploy to-do list contract on Sepolia.
+- GitHub repo with 2 contracts (counter, to-do).
 
-## 9. Extras
+---
+
+## Phase 2: Intermediate Blockchain & Frontend Integration (August 2025 - October 2025, 3 Months)
+### Objective
+Build complex smart contracts and integrate with a React/Next.js frontend using Ethers.js.
+
+---
+
+### Month 4: Advanced Solidity (August 2025)
+
+#### Week 13-16: Complex Contracts (August 1-31, 2025)
+- **Tasks**:
+  - Learn inheritance, libraries, and upgradeable contracts.
+  - Study ERC20 and ERC721 standards.
+- **Resources**:
+  - **Course**: [Coursera: Smart Contracts](https://www.coursera.org/learn/smart-contracts) (~10 hours, audit free or $49).
+  - **Book**: [*Solidity Programming Essentials*](https://www.amazon.com/Solidity-Programming-Essentials-Blockchain-Development/dp/1788831381), Chapters 5-7, ~60 pages.
+  - **Doc**: [OpenZeppelin Contracts: ERC20](https://docs.openzeppelin.com/contracts/4.x/erc20) and [ERC721](https://docs.openzeppelin.com/contracts/4.x/erc721).
+  - **Video**: [freeCodeCamp: Solidity, Blockchain, and Smart Contract Course](https://www.youtube.com/watch?v=um2K6rH4u_g) (watch ERC standards, 3:00-4:00, ~1 hour).
+- **Practice**:
+  - Build an ERC20 token contract (RashadCoin).
+  - Deploy and test on Sepolia.
+  - Deadline: August 31, 2025.
+- **Accountability**: Share token contract on [GitHub](https://github.com/).
+
+---
+
+### Month 5: Web3 Frontend Integration (September 2025)
+
+#### Week 17-20: Ethers.js & React (September 1-30, 2025)
+- **Tasks**:
+  - Learn Ethers.js for blockchain interaction.
+  - Connect to-do DApp frontend to the contract.
+- **Resources**:
+  - **Course**: [Udemy: Build Web3 Apps with Solidity and React](https://www.udemy.com/course/build-a-web3-dapp-with-solidity-and-react/) (Sections 1-4, ~8 hours).
+  - **Doc**: [Ethers.js Docs: Getting Started](https://docs.ethers.io/v5/getting-started/).
+  - **Video**: [React + Ethers.js Tutorial](https://www.youtube.com/watch?v=a0osIaAOFSE) (1 hour).
+- **Practice**:
+  - Upgrade to-do DApp: Users add tasks via React UI.
+  - Display task list in real-time.
+  - Deadline: September 30, 2025.
+
+---
+
+### Month 6: DApp Project (October 2025)
+
+#### Week 21-24: NFT Marketplace DApp (October 1-31, 2025)
+- **Tasks**:
+  - Build an ERC721 NFT contract.
+  - Create a Next.js frontend for minting/buying NFTs.
+- **Resources**:
+  - **Course**: [Udemy: Build Web3 Apps with Solidity and React](https://www.udemy.com/course/build-a-web3-dapp-with-solidity-and-react/) (Sections 5-7, ~6 hours).
+  - **Tutorial**: [Alchemy: Build an NFT Marketplace](https://www.alchemy.com/overviews/how-to-build-an-nft-marketplace).
+  - **Video**: [freeCodeCamp: Solidity, Blockchain, and Smart Contract Course](https://www.youtube.com/watch?v=um2K6rH4u_g) (watch NFT section, 4:00-5:00, ~1 hour).
+- **Practice**:
+  - Contract: Mint NFTs, list for sale, buy NFTs.
+  - Frontend: Display NFTs, allow minting via MetaMask.
+  - Deploy on Sepolia, host on [Vercel](https://vercel.com/).
+  - Deadline: October 31, 2025.
+- **Accountability**: Share DApp link on X and [GitHub](https://github.com/).
+
+---
+
+### Milestones
+- Complete Coursera Smart Contracts course.
+- Launch NFT marketplace DApp on Sepolia.
+- GitHub repo with 3 contracts (to-do, ERC20, ERC721).
+
+---
+
+## Phase 3: Advanced Blockchain & Portfolio (November 2025 - January 2026, 3 Months)
+### Objective
+Master advanced blockchain topics, build a portfolio, and contribute to Web3.
+
+---
+
+### Month 7: Advanced Topics (November 2025)
+
+#### Week 25-28: Layer-2 & Oracles (November 1-30, 2025)
+- **Tasks**:
+  - Learn layer-2 (Optimism, Arbitrum).
+  - Study Chainlink for oracles.
+- **Resources**:
+  - **Course**: [Udemy: Advanced Ethereum Development](https://www.udemy.com/course/advanced-ethereum-development/) (Sections 1-3, ~6 hours).
+  - **Doc**: [Chainlink Docs: Price Feeds](https://docs.chain.link/data-feeds/price-feeds).
+  - **Video**: [Chainlink Price Feeds Tutorial](https://www.youtube.com/watch?v=AYgOJSG2lMo) (30 mins).
+- **Practice**:
+  - Build a contract using Chainlink price feeds (ETH/USD).
+  - Deploy on Optimism testnet.
+  - Deadline: November 30, 2025.
+
+---
+
+### Month 8: Portfolio Project (December 2025)
+
+#### Week 29-32: DeFi Yield Farm DApp (December 1-31, 2025)
+- **Tasks**:
+  - Build a DeFi contract for staking and rewards.
+  - Create a Next.js frontend for staking.
+- **Resources**:
+  - **Course**: [Udemy: DeFi Development Masterclass](https://www.udemy.com/course/defi-development-masterclass/) (Sections 1-4, ~8 hours).
+  - **Tutorial**: [Alchemy: Build a DeFi Staking DApp](https://www.alchemy.com/overviews/how-to-build-a-defi-staking-dapp).
+  - **Video**: [freeCodeCamp: Solidity, Blockchain, and Smart Contract Course](https://www.youtube.com/watch?v=um2K6rH4u_g) (watch DeFi section, 5:00-6:00, ~1 hour).
+- **Practice**:
+  - Contract: Stake tokens, earn rewards.
+  - Frontend: Display staked amount, claim rewards.
+  - Deploy on Sepolia, host on [Vercel](https://vercel.com/).
+  - Deadline: December 31, 2025.
+- **Accountability**: Share DApp demo on X.
+
+---
+
+### Month 9: Open-Source & Networking (January 2026)
+
+#### Week 33-36: Contributions (January 1-31, 2026)
+- **Tasks**:
+  - Contribute to an open-source Web3 project.
+  - Join a hackathon (e.g., ETHGlobal).
+- **Resources**:
+  - **Repo**: [OpenZeppelin Contracts](https://github.com/OpenZeppelin/openzeppelin-contracts) (find issues).
+  - **Event**: [ETHGlobal](https://ethglobal.com/).
+  - **Video**: [Hackathon Prep Guide](https://www.youtube.com/watch?v=5q5z6a5q5z6) (30 mins).
+- **Practice**:
+  - Submit 1 pull request to a Web3 repo.
+  - Build a hackathon project (mini-DApp).
+  - Deadline: January 31, 2026.
+
+---
+
+### Milestones
+- Deploy a DeFi DApp.
+- GitHub portfolio with 5 projects.
+- Complete 1 open-source contribution.
+
+---
+
+## Phase 4: Job-Ready Blockchain Developer (February 2026 - May 2026, 4 Months)
+### Objective
+Land a blockchain developer job or freelance gig.
+
+---
+
+### Month 10-11: Job Prep (February - March 2026)
+
+#### Week 37-44: Portfolio & Skills (February 1 - March 31, 2026)
+- **Tasks**:
+  - Build a personal portfolio site with Next.js.
+  - Practice interview questions (smart contract security, gas optimization).
+- **Resources**:
+  - **Course**: [Udemy: Blockchain Developer Interview Prep](https://www.udemy.com/course/blockchain-developer-interview-questions/) (~4 hours).
+  - **Book**: [*Ethereum Smart Contract Development*](https://www.amazon.com/Ethereum-Smart-Contract-Development-Blockchain/dp/1788473043), Chapters 8-10, ~50 pages.
+  - **Video**: [Blockchain Interview Prep](https://www.youtube.com/watch?v=7q5z6a5q5z7) (1 hour).
+- **Practice**:
+  - Create a portfolio site showcasing 3 DApps.
+  - Solve 10 LeetCode problems (medium, arrays/strings).
+  - Deadline: March 31, 2026.
+
+---
+
+### Month 12: Job Applications (April - May 2026)
+
+#### Week 45-52: Apply & Network (April 1 - May 12, 2026)
+- **Tasks**:
+  - Apply to 20 blockchain dev jobs.
+  - Join Web3 communities on Discord.
+- **Resources**:
+  - **Job Boards**: [CryptoJobs](https://cryptojobs.list/) and [Web3.Career](https://web3.career/).
+  - **Community**: [Ethereum Discord](https://discord.com/invite/ethereum).
+  - **Video**: [Networking Tips](https://www.youtube.com/watch?v=8q5z6a5q5z8) (30 mins).
+- **Practice**:
+  - Update LinkedIn with blockchain skills.
+  - Attend 1 virtual Web3 meetup.
+  - Deadline: May 12, 2026.
+- **Accountability**: Share job search progress on X weekly.
+
+---
+
+### Milestones
+- Launch portfolio site.
+- Land a blockchain dev job or freelance gig.
+
+---
+
+## Anti-Procrastination Strategies
+- **Pomodoro Technique**: Work 25 mins, break 5 mins ([TomatoTimer](https://tomato-timer.com/)).
+- **Accountability Partner**: Share weekly goals on X or with a friend.
+- **Reward System**: Complete a week’s tasks? Treat yourself (e.g., game, snack).
+- **Block Distractions**: Use [Freedom](https://freedom.to/) to block social media during study hours.
+- **Daily Reminder**: Set a 7 PM phone alarm: “Time to code!”
+
+---
+
+## Style Vibe
+- **Hairstyle**: Rock a **high fade with a curly top**—low-maintenance and confident. Visit a barber every 3 weeks.
+- **Dev Swag**: Pair with a hoodie and sneakers for Web3 meetups.
+
+---
+
+## Detailed Guidance for Sending a Transaction on Sepolia
+For Week 2’s practice, here’s how to send a transaction on the Sepolia testnet with no prior knowledge:
+
+#### Step 1: Set Up MetaMask
+- **Install**: Add [MetaMask](https://metamask.io/) as a Chrome extension.
+- **Add Sepolia**:
+  - Open MetaMask, click network dropdown, select “Add Network.”
+  - Enter:
+    - **Network Name**: Sepolia
+    - **RPC URL**: https://rpc.sepolia.org
+    - **Chain ID**: 11155111
+    - **Currency Symbol**: ETH
+    - **Block Explorer**: https://sepolia.etherscan.io
+  - Click “Save.”
+
+#### Step 2: Get Sepolia ETH
+- **Why**: Sepolia ETH pays for transaction fees on the testnet.
+- **How**:
+  - Visit [Chainlink Sepolia Faucet](https://faucets.chain.link/) or [Sepolia FaucETH](https://faucet.sepolia.dev/).
+  - For Chainlink: Log in via GitHub, select “Sepolia Testnet ETH,” click “Send request.”
+  - For Sepolia FaucETH: Enter wallet address, solve captcha, click “Request funds.”
+- **Check Balance**: View Sepolia ETH in MetaMask (set to Sepolia network).
+
+#### Step 3: Send a Transaction
+- **Send ETH**:
+  - In MetaMask, click “Send.”
+  - Ensure network is Sepolia.
+  - Enter a recipient’s Sepolia wallet address (ask a friend or use a test address).
+  - Send 0.01 Sepolia ETH.
+  - Click “Next” and “Confirm.”
+- **Verify**: Check transaction on [Sepolia Etherscan](https://sepolia.etherscan.io/).
+
+#### Resource
+- [Alchemy: Deploy to Sepolia](https://www.alchemy.com/docs/how-to-deploy-a-smart-contract-to-the-sepolia-testnet)
+
+---
+
+## Getting Started
+- **Today (May 12, 2025)**: Enroll in [Coursera: Blockchain Basics](https://www.coursera.org/learn/blockchain-basics) (free audit) and watch [Blockchain 101 by IBM](https://www.youtube.com/watch?v=coQ5dg8wM2o).
+- **This Week**: Complete Week 1 tasks and post summary on X by May 18.
+- **Stay Motivated**: Use Pomodoro and share progress to stay accountable.
